@@ -50,7 +50,7 @@ $(function () {
   });
 
   $.ajax({
-    url: 'http://172.23.58.134:5001/api/v1/status/',
+    url: 'http://0.0.0.0:5001/api/v1/status/',
     method: 'GET',
     success: function (data) {
       if (data.status.toLowerCase() === 'ok') {
@@ -101,7 +101,7 @@ $(function () {
 const placesSearch = function (query) {
   query = query || {};
   $.ajax({
-    url: 'http://172.23.58.134:5001/api/v1/places_search/',
+    url: 'http://0.0.0.0:5001/api/v1/places_search/',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     data: JSON.stringify(query),
@@ -165,7 +165,7 @@ const months = [
 
 const getReviews = function (target, placeId) {
   $.ajax({
-    url: `http://172.23.58.134:5001/api/v1/places/${placeId}/reviews`,
+    url: `http://0.0.0.0:5001/api/v1/places/${placeId}/reviews`,
     method: 'GET',
     success: function (reviews) {
       for (const review of reviews) {
@@ -198,7 +198,7 @@ const dateSuffix = function (day) {
 
 const getUser = function (userId, cb) {
   $.ajax({
-    url: `http://172.23.58.134:5001/api/v1/users/${userId}`,
+    url: `http://0.0.0.0:5001/api/v1/users/${userId}`,
     method: 'GET',
     success: cb
   });
