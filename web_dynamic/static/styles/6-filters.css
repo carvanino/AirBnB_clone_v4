@@ -109,3 +109,7 @@ button:hover {
   height: 1em;
   max-height: 1em;
 }
+
+[type='checkbox'] {
+  margin-right: 10px;
+}
